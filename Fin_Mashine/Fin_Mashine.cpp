@@ -65,10 +65,16 @@ public:
             }
         }
     }
+    void Print() {
+        cout << "Wallet 1:\nDebut card: " << card1_debut << " $\nCredit card: " << card1_credit << " $\n";
+        cout << "Wallet 2:\nDebut card: " << card2_debut << " $\nCredit card: " << card2_credit << " $\n";
+    }
 };
 
 
 int main()
 {
-
+    Finance F;
+    F.Input();
+    F.Print();
 }
