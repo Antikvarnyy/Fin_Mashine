@@ -20,19 +20,27 @@ class Finance {
     double card1_credit;
     double card2_credit;
 
-    double sub_car[7];
-    double sub_transport[7];
-    double sub_food[7];
-    double sub_flat[7];
-    double sub_medicine[7];
-    double sub_other[7];
+    double sub_car[30];
+    double sub_transport[30];
+    double sub_food[30];
+    double sub_flat[30];
+    double sub_medicine[30];
+    double sub_other[30];
 
-    double car_sum;
-    double transport_sum;
-    double food_sum;
-    double flat_sum;
-    double medicine_sum;
-    double other_sum;
+    double car_sum_week;
+    double transport_sum_week;
+    double food_sum_week;
+    double flat_sum_week;
+    double medicine_sum_week;
+    double other_sum_week;
+
+    double car_sum_month;
+    double transport_sum_month;
+    double food_sum_month;
+    double flat_sum_month;
+    double medicine_sum_month;
+    double other_sum_month;
+
 
 public:
 
@@ -42,7 +50,7 @@ public:
         card1_debut = 0;
         card2_debut = 0;
 
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             sub_car[i] = 0;
             sub_transport[i] = 0;
             sub_food[i] = 0;
@@ -51,12 +59,20 @@ public:
             sub_other[i] = 0;
         }
 
-        car_sum = 0;
-        transport_sum = 0;
-        food_sum = 0;
-        flat_sum = 0;
-        medicine_sum = 0;
-        other_sum = 0;
+        car_sum_week = 0;
+        transport_sum_week = 0;
+        food_sum_week = 0;
+        flat_sum_week = 0;
+        medicine_sum_week = 0;
+        other_sum_week = 0;
+
+        car_sum_month = 0;
+        transport_sum_month = 0;
+        food_sum_month = 0;
+        flat_sum_month = 0;
+        medicine_sum_month = 0;
+        other_sum_month = 0;
+
     }
 
     void Input() {
@@ -100,89 +116,106 @@ public:
         int f = 0;
         cout << "===============\nWallet 1:\nDebut card: " << card1_debut << " $\nCredit card: " << card1_credit << " $\n";
         cout << "===============\nWallet 2:\nDebut card: " << card2_debut << " $\nCredit card: " << card2_credit << " $\n";
+
         cout << "===============\nSpending:\n";
+
         cout << "===============\nCar: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_car[i] != 0) {
                 cout << "\nDay " << i+1 << ": " << sub_car[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
         f = 0;
+
         cout << "===============\nPublic transport: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_transport[i] != 0) {
                 cout << "\nDay " << i + 1 << ": " << sub_transport[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
         f = 0;
+
         cout << "===============\nFood: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_food[i] != 0) {
                 cout << "\nDay " << i + 1 << ": " << sub_food[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
         f = 0;
+
         cout << "===============\nFlat: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_flat[i] != 0) {
                 cout << "\nDay " << i + 1 << ": " << sub_flat[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
         f = 0;
+
         cout << "===============\nMedicine: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_medicine[i] != 0) {
                 cout << "\nDay " << i + 1 << ": " << sub_medicine[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
         f = 0;
+
         cout << "===============\nOther: ";
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 30; i++) {
             if (sub_other[i] != 0) {
                 cout << "\nDay " << i + 1 << ": " << sub_other[i] << " $";
                 f++;
             }
         }
         if (f == 0)
-            cout << "No spending this week\n";
+            cout << "No spending this month\n";
         else
             cout << "\n";
 
         cout << "===============\nTotal spends by week:\n===============\n";
-        cout << "Car: " << car_sum << " $\n";
-        cout << "Public transport: " << transport_sum << " $\n";
-        cout << "Food: " << food_sum << " $\n";
-        cout << "Flat: " << flat_sum << " $\n";
-        cout << "Medicine: " << medicine_sum << " $\n";
-        cout << "Other: " << other_sum << " $\n";
+        cout << "Car: " << car_sum_week << " $\n";
+        cout << "Public transport: " << transport_sum_week << " $\n";
+        cout << "Food: " << food_sum_week << " $\n";
+        cout << "Flat: " << flat_sum_week << " $\n";
+        cout << "Medicine: " << medicine_sum_week << " $\n";
+        cout << "Other: " << other_sum_week << " $\n";
+
+        cout << "===============\nTotal spends by month:\n===============\n";
+        cout << "Car: " << car_sum_month << " $\n";
+        cout << "Public transport: " << transport_sum_month << " $\n";
+        cout << "Food: " << food_sum_month << " $\n";
+        cout << "Flat: " << flat_sum_month << " $\n";
+        cout << "Medicine: " << medicine_sum_month << " $\n";
+        cout << "Other: " << other_sum_month << " $\n";
+
     }
     void Input_Sub() {
-        char ch1, ch2, ch3, ch4;
+        char ch1, ch2, ch3;
+        int ch4 = 0;
         string s;
         double d;
 
@@ -199,9 +232,13 @@ public:
             ch3 = _getch();
         } while (ch3 != '1' && ch3 != '2' && ch3 != '3' && ch3 != '4' && ch3 != '5' && ch3 != '6');
         do {
-            cout << "When you spend this money?\n1 - Mondey\n2 - Thuesday\n3 - Wensday\n4 - Thursday\n5 - Friday\n6 - Saturday\n7 - Sunday\n";
-            ch4 = _getch();
-        } while (ch4 != '1' && ch4 != '2' && ch4 != '3' && ch4 != '4' && ch4 != '5' && ch4 != '6' && ch4 != '7');
+            cout << "When you spend this money?Enter day: ";
+            cin >> s;
+            if (CheckingDouble(s))
+                ch4 = stoi(s);
+            else
+                cout << "Error";
+        } while (ch4 < 1 || ch4>30);
         do {
             cout << "Enter the amount of spend: ";
             cin >> s;
@@ -253,168 +290,94 @@ public:
             }
         }
 
-        if (ch3 == '1') {
-            if (ch4 == '1') {
-                sub_car[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_car[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_car[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_car[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_car[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_car[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_car[6] += d;
-            }
-            car_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                car_sum += sub_car[i];
-            }
+        if (ch3 == '1'){
+            if (ch4 < 8)
+                car_sum_week += d;
+            car_sum_month += d;
+            sub_car[ch4 - 1] = d;
         }
-        else if (ch3 == '2') {
-            if (ch4 == '1') {
-                sub_transport[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_transport[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_transport[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_transport[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_transport[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_transport[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_transport[6] += d;
-            }
-            transport_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                transport_sum += sub_transport[i];
-            }
+        else  if (ch3 == '2') {
+            if (ch4 < 8)
+                transport_sum_week += d;
+            transport_sum_month += d;
+            sub_transport[ch4 - 1] = d;
         }
-        else if (ch3 == '3') {
-            if (ch4 == '1') {
-                sub_food[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_food[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_food[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_food[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_food[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_food[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_food[6] += d;
-            }
-            food_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                food_sum += sub_food[i];
-            }
+        else  if (ch3 == '3') {
+            if (ch4 < 8)
+                food_sum_week += d;
+            food_sum_month += d;
+            sub_food[ch4 - 1] = d;
         }
-        else if (ch3 == '4') {
-            if (ch4 == '1') {
-                sub_flat[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_flat[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_flat[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_flat[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_flat[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_flat[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_flat[6] += d;
-            }
-            flat_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                flat_sum += sub_flat[i];
-            }
+        else  if (ch3 == '4') {
+            if (ch4 < 8)
+                flat_sum_week += d;
+            flat_sum_month += d;
+            sub_flat[ch4 - 1] = d;
         }
-        else if (ch3 == '5') {
-            if (ch4 == '1') {
-                sub_medicine[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_medicine[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_medicine[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_medicine[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_medicine[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_medicine[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_medicine[6] += d;
-            }
-            medicine_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                medicine_sum += sub_medicine[i];
-            }
+        else  if (ch3 == '5') {
+            if (ch4 < 8)
+                medicine_sum_week += d;
+            medicine_sum_month += d;
+            sub_medicine[ch4 - 1] = d;
         }
-        else {
-            if (ch4 == '1') {
-                sub_other[0] += d;
-            }
-            else if (ch4 == '2') {
-                sub_other[1] += d;
-            }
-            else if (ch4 == '3') {
-                sub_other[2] += d;
-            }
-            else if (ch4 == '4') {
-                sub_other[3] += d;
-            }
-            else if (ch4 == '5') {
-                sub_other[4] += d;
-            }
-            else if (ch4 == '6') {
-                sub_other[5] += d;
-            }
-            else if (ch4 == '7') {
-                sub_other[6] += d;
-            }
-            other_sum = 0;
-            for (int i = 0; i < 7; i++) {
-                other_sum += sub_other[i];
-            }
+        else  if (ch3 == '6') {
+            if (ch4 < 8)
+                other_sum_week += d;
+            other_sum_month += d;
+            sub_other[ch4 - 1] = d;
         }
+    }
+    void Sort_Week() {       
+        double mas[6] = { car_sum_week, transport_sum_week, food_sum_week, flat_sum_week, medicine_sum_week, other_sum_week };
+        for (int i = 0; i < 6 - 1; ++i)
+        {
+            int min = i;
+            for (int cur = i + 1; cur < 6; ++cur)
+            {
+                if (mas[cur] > mas[min])
+                    min = cur;
+            }
+            swap(mas[i], mas[min]);
+        }
+        if (mas[0] == car_sum_week)
+            cout << "1: Car: " << car_sum_week << " $ by week";
+        else if(mas[0] == transport_sum_week)
+            cout << "1: Public transport: " << transport_sum_week << " $ by week";
+        else if (mas[0] == transport_sum_week)
+            cout << "1: Food: " << food_sum_week << " $ by week";
+        else if (mas[0] == transport_sum_week)
+            cout << "1: Flat: " << flat_sum_week << " $ by week";
+        else if (mas[0] == transport_sum_week)
+            cout << "1: Medicine: " << medicine_sum_week << " $ by week";
+        else if (mas[0] == transport_sum_week)
+            cout << "1: Other: " << other_sum_week << " $ by week";
+
+        if (mas[1] == car_sum_week)
+            cout << "2: Car: " << car_sum_week << " $ by week";
+        else if (mas[1] == transport_sum_week)
+            cout << "2: Public transport: " << transport_sum_week << " $ by week";
+        else if (mas[1] == transport_sum_week)
+            cout << "2: Food: " << food_sum_week << " $ by week";
+        else if (mas[1] == transport_sum_week)
+            cout << "2: Flat: " << flat_sum_week << " $ by week";
+        else if (mas[1] == transport_sum_week)
+            cout << "2: Medicine: " << medicine_sum_week << " $ by week";
+        else if (mas[1] == transport_sum_week)
+            cout << "2: Other: " << other_sum_week << " $ by week";
+
+        if (mas[2] == car_sum_week)
+            cout << "3: Car: " << car_sum_week << " $ by week";
+        else if (mas[2] == transport_sum_week)
+            cout << "3: Public transport: " << transport_sum_week << " $ by week";
+        else if (mas[2] == transport_sum_week)
+            cout << "3: Food: " << food_sum_week << " $ by week";
+        else if (mas[2] == transport_sum_week)
+            cout << "3: Flat: " << flat_sum_week << " $ by week";
+        else if (mas[2] == transport_sum_week)
+            cout << "3: Medicine: " << medicine_sum_week << " $ by week";
+        else if (mas[2] == transport_sum_week)
+            cout << "3: Other: " << other_sum_week << " $ by week";
+
     }
 };
 
@@ -422,6 +385,8 @@ public:
 int main()
 {
     Finance F;
+    F.Sort_Week();
+    return 0;
     F.Input_Sub();
     system("cls");
     F.Print();
