@@ -114,6 +114,7 @@ public:
     }
     void Print() {
         int f = 0;
+        system("cls");
         cout << "===============\nWallet 1:\nDebut card: " << card1_debut << " $\nCredit card: " << card1_credit << " $\n";
         cout << "===============\nWallet 2:\nDebut card: " << card2_debut << " $\nCredit card: " << card2_credit << " $\n";
 
@@ -212,6 +213,11 @@ public:
         cout << "Medicine: " << medicine_sum_month << " $\n";
         cout << "Other: " << other_sum_month << " $\n";
 
+        cout << "===============\nTOP 3 categories by spends by week:\n===============\n";
+        Sort_Week();
+        cout << "===============\nTOP 3 categories by spends by month:\n===============\n";
+        Sort_Month();
+        cout << "===============\n";
     }
     void Input_Sub() {
         char ch1, ch2, ch3;
@@ -339,44 +345,48 @@ public:
             }
             swap(mas[i], mas[min]);
         }
-        if (mas[0] == car_sum_week)
-            cout << "1: Car: " << car_sum_week << " $ by week";
-        else if(mas[0] == transport_sum_week)
-            cout << "1: Public transport: " << transport_sum_week << " $ by week";
-        else if (mas[0] == transport_sum_week)
-            cout << "1: Food: " << food_sum_week << " $ by week";
-        else if (mas[0] == transport_sum_week)
-            cout << "1: Flat: " << flat_sum_week << " $ by week";
-        else if (mas[0] == transport_sum_week)
-            cout << "1: Medicine: " << medicine_sum_week << " $ by week";
-        else if (mas[0] == transport_sum_week)
-            cout << "1: Other: " << other_sum_week << " $ by week";
+        if (mas[0] != 0) {
+            if (mas[0] == car_sum_week)
+                cout << "1: Car: " << car_sum_week << " $ by week\n";
+            else if (mas[0] == transport_sum_week)
+                cout << "1: Public transport: " << transport_sum_week << " $ by week\n";
+            else if (mas[0] == transport_sum_week)
+                cout << "1: Food: " << food_sum_week << " $ by week\n";
+            else if (mas[0] == transport_sum_week)
+                cout << "1: Flat: " << flat_sum_week << " $ by week\n";
+            else if (mas[0] == transport_sum_week)
+                cout << "1: Medicine: " << medicine_sum_week << " $ by week\n";
+            else if (mas[0] == transport_sum_week)
+                cout << "1: Other: " << other_sum_week << " $ by week\n";
 
-        if (mas[1] == car_sum_week)
-            cout << "2: Car: " << car_sum_week << " $ by week";
-        else if (mas[1] == transport_sum_week)
-            cout << "2: Public transport: " << transport_sum_week << " $ by week";
-        else if (mas[1] == transport_sum_week)
-            cout << "2: Food: " << food_sum_week << " $ by week";
-        else if (mas[1] == transport_sum_week)
-            cout << "2: Flat: " << flat_sum_week << " $ by week";
-        else if (mas[1] == transport_sum_week)
-            cout << "2: Medicine: " << medicine_sum_week << " $ by week";
-        else if (mas[1] == transport_sum_week)
-            cout << "2: Other: " << other_sum_week << " $ by week";
+            if (mas[1] == car_sum_week)
+                cout << "2: Car: " << car_sum_week << " $ by week\n";
+            else if (mas[1] == transport_sum_week)
+                cout << "2: Public transport: " << transport_sum_week << " $ by week\n";
+            else if (mas[1] == transport_sum_week)
+                cout << "2: Food: " << food_sum_week << " $ by week\n";
+            else if (mas[1] == transport_sum_week)
+                cout << "2: Flat: " << flat_sum_week << " $ by week\n";
+            else if (mas[1] == transport_sum_week)
+                cout << "2: Medicine: " << medicine_sum_week << " $ by week\n";
+            else if (mas[1] == transport_sum_week)
+                cout << "2: Other: " << other_sum_week << " $ by week\n";
 
-        if (mas[2] == car_sum_week)
-            cout << "3: Car: " << car_sum_week << " $ by week";
-        else if (mas[2] == transport_sum_week)
-            cout << "3: Public transport: " << transport_sum_week << " $ by week";
-        else if (mas[2] == transport_sum_week)
-            cout << "3: Food: " << food_sum_week << " $ by week";
-        else if (mas[2] == transport_sum_week)
-            cout << "3: Flat: " << flat_sum_week << " $ by week";
-        else if (mas[2] == transport_sum_week)
-            cout << "3: Medicine: " << medicine_sum_week << " $ by week";
-        else if (mas[2] == transport_sum_week)
-            cout << "3: Other: " << other_sum_week << " $ by week";
+            if (mas[2] == car_sum_week)
+                cout << "3: Car: " << car_sum_week << " $ by week\n";
+            else if (mas[2] == transport_sum_week)
+                cout << "3: Public transport: " << transport_sum_week << " $ by week\n";
+            else if (mas[2] == transport_sum_week)
+                cout << "3: Food: " << food_sum_week << " $ by week\n";
+            else if (mas[2] == transport_sum_week)
+                cout << "3: Flat: " << flat_sum_week << " $ by week\n";
+            else if (mas[2] == transport_sum_week)
+                cout << "3: Medicine: " << medicine_sum_week << " $ by week\n";
+            else if (mas[2] == transport_sum_week)
+                cout << "3: Other: " << other_sum_week << " $ by week\n";
+        }
+        else
+            cout << "No spending\n";
 
     }
     void Sort_Month() {
@@ -391,44 +401,49 @@ public:
             }
             swap(mas[i], mas[min]);
         }
-        if (mas[0] == car_sum_month)
-            cout << "1: Car: " << car_sum_month << " $ by month";
-        else if (mas[0] == transport_sum_month)
-            cout << "1: Public transport: " << transport_sum_month << " $ by month";
-        else if (mas[0] == transport_sum_month)
-            cout << "1: Food: " << food_sum_month << " $ by month";
-        else if (mas[0] == transport_sum_month)
-            cout << "1: Flat: " << flat_sum_month << " $ by month";
-        else if (mas[0] == transport_sum_month)
-            cout << "1: Medicine: " << medicine_sum_month << " $ by month";
-        else if (mas[0] == transport_sum_month)
-            cout << "1: Other: " << other_sum_month << " $ by month";
+        if (mas[0] != 0) {
+            if (mas[0] == car_sum_month)
+                cout << "1: Car: " << car_sum_month << " $ by month\n";
+            else if (mas[0] == transport_sum_month)
+                cout << "1: Public transport: " << transport_sum_month << " $ by month\n";
+            else if (mas[0] == transport_sum_month)
+                cout << "1: Food: " << food_sum_month << " $ by month\n";
+            else if (mas[0] == transport_sum_month)
+                cout << "1: Flat: " << flat_sum_month << " $ by month\n";
+            else if (mas[0] == transport_sum_month)
+                cout << "1: Medicine: " << medicine_sum_month << " $ by month\n";
+            else if (mas[0] == transport_sum_month)
+                cout << "1: Other: " << other_sum_month << " $ by month\n";
 
-        if (mas[1] == car_sum_month)
-            cout << "2: Car: " << car_sum_month << " $ by month";
-        else if (mas[1] == transport_sum_month)
-            cout << "2: Public transport: " << transport_sum_month << " $ by month";
-        else if (mas[1] == transport_sum_month)
-            cout << "2: Food: " << food_sum_month << " $ by month";
-        else if (mas[1] == transport_sum_month)
-            cout << "2: Flat: " << flat_sum_month << " $ by month";
-        else if (mas[1] == transport_sum_month)
-            cout << "2: Medicine: " << medicine_sum_month << " $ by month";
-        else if (mas[1] == transport_sum_month)
-            cout << "2: Other: " << other_sum_month << " $ by month";
+            if (mas[1] == car_sum_month)
+                cout << "2: Car: " << car_sum_month << " $ by month\n";
+            else if (mas[1] == transport_sum_month)
+                cout << "2: Public transport: " << transport_sum_month << " $ by month\n";
+            else if (mas[1] == transport_sum_month)
+                cout << "2: Food: " << food_sum_month << " $ by month\n";
+            else if (mas[1] == transport_sum_month)
+                cout << "2: Flat: " << flat_sum_month << " $ by month\n";
+            else if (mas[1] == transport_sum_month)
+                cout << "2: Medicine: " << medicine_sum_month << " $ by month\n";
+            else if (mas[1] == transport_sum_month)
+                cout << "2: Other: " << other_sum_month << " $ by month\n";
 
-        if (mas[2] == car_sum_month)
-            cout << "3: Car: " << car_sum_month << " $ by month";
-        else if (mas[2] == transport_sum_month)
-            cout << "3: Public transport: " << transport_sum_month << " $ by month";
-        else if (mas[2] == transport_sum_month)
-            cout << "3: Food: " << food_sum_month << " $ by month";
-        else if (mas[2] == transport_sum_month)
-            cout << "3: Flat: " << flat_sum_month << " $ by month";
-        else if (mas[2] == transport_sum_month)
-            cout << "3: Medicine: " << medicine_sum_month << " $ by month";
-        else if (mas[2] == transport_sum_month)
-            cout << "3: Other: " << other_sum_month << " $ by month";
+            if (mas[2] == car_sum_month)
+                cout << "3: Car: " << car_sum_month << " $ by month\n";
+            else if (mas[2] == transport_sum_month)
+                cout << "3: Public transport: " << transport_sum_month << " $ by month\n";
+            else if (mas[2] == transport_sum_month)
+                cout << "3: Food: " << food_sum_month << " $ by month\n";
+            else if (mas[2] == transport_sum_month)
+                cout << "3: Flat: " << flat_sum_month << " $ by month\n";
+            else if (mas[2] == transport_sum_month)
+                cout << "3: Medicine: " << medicine_sum_month << " $ by month\n";
+            else if (mas[2] == transport_sum_month)
+                cout << "3: Other: " << other_sum_month << " $ by month\n";
+        }
+        else
+            cout << "No spending\n";
+
 
     }
 
@@ -440,7 +455,22 @@ int main()
     Finance F;
     char ch;
     do {
-
+        system("cls");
+        cout << "Menu.\n1 - Add money on cards\n2 - Add spends\n3 - Display all profits and expenses on the screen\n4 - Save in file\n5 - Load from file\n";
+        ch = _getch();
+        switch (ch)
+        {
+        case'1':
+            F.Input();
+            break;
+        case'2':
+            F.Input_Sub();
+            break;
+        case'3':
+            F.Print();
+            system("pause");
+            break;
+        }
     } while (ch != 27);
 
 }
