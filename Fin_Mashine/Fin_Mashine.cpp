@@ -97,8 +97,89 @@ public:
         }
     }
     void Print() {
-        cout << "Wallet 1:\nDebut card: " << card1_debut << " $\nCredit card: " << card1_credit << " $\n";
-        cout << "Wallet 2:\nDebut card: " << card2_debut << " $\nCredit card: " << card2_credit << " $\n";
+        int f = 0;
+        cout << "===============\nWallet 1:\nDebut card: " << card1_debut << " $\nCredit card: " << card1_credit << " $\n";
+        cout << "===============\nWallet 2:\nDebut card: " << card2_debut << " $\nCredit card: " << card2_credit << " $\n";
+        cout << "===============\nSpending:\n";
+        cout << "===============\nCar: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_car[i] != 0) {
+                cout << "\nDay " << i+1 << ": " << sub_car[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+        f = 0;
+        cout << "===============\nPublic transport: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_transport[i] != 0) {
+                cout << "\nDay " << i + 1 << ": " << sub_transport[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+        f = 0;
+        cout << "===============\nFood: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_food[i] != 0) {
+                cout << "\nDay " << i + 1 << ": " << sub_food[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+        f = 0;
+        cout << "===============\nFlat: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_flat[i] != 0) {
+                cout << "\nDay " << i + 1 << ": " << sub_flat[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+        f = 0;
+        cout << "===============\nMedicine: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_medicine[i] != 0) {
+                cout << "\nDay " << i + 1 << ": " << sub_medicine[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+        f = 0;
+        cout << "===============\nOther: ";
+        for (int i = 0; i < 7; i++) {
+            if (sub_other[i] != 0) {
+                cout << "\nDay " << i + 1 << ": " << sub_other[i] << " $";
+                f++;
+            }
+        }
+        if (f == 0)
+            cout << "No spending this week\n";
+        else
+            cout << "\n";
+
+        cout << "===============\nTotal spends by week:\n===============\n";
+        cout << "Car: " << car_sum << " $\n";
+        cout << "Public transport: " << transport_sum << " $\n";
+        cout << "Food: " << food_sum << " $\n";
+        cout << "Flat: " << flat_sum << " $\n";
+        cout << "Medicine: " << medicine_sum << " $\n";
+        cout << "Other: " << other_sum << " $\n";
     }
     void Input_Sub() {
         char ch1, ch2, ch3, ch4;
@@ -118,7 +199,7 @@ public:
             ch3 = _getch();
         } while (ch3 != '1' && ch3 != '2' && ch3 != '3' && ch3 != '4' && ch3 != '5' && ch3 != '6');
         do {
-            cout << "When you spend this money?\n1 - Mondey\n2 - Thuesday\n3 - Wensday\n4 - Thursday\n5 - Friday\n6 - Saturday\7 - Sunday\n";
+            cout << "When you spend this money?\n1 - Mondey\n2 - Thuesday\n3 - Wensday\n4 - Thursday\n5 - Friday\n6 - Saturday\n7 - Sunday\n";
             ch4 = _getch();
         } while (ch4 != '1' && ch4 != '2' && ch4 != '3' && ch4 != '4' && ch4 != '5' && ch4 != '6' && ch4 != '7');
         do {
@@ -342,5 +423,6 @@ int main()
 {
     Finance F;
     F.Input_Sub();
+    system("cls");
     F.Print();
 }
